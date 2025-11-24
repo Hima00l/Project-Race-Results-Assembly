@@ -9,6 +9,7 @@ A brief description of what this project does and its purpose. Keep it concise a
 - [Features](#features)
 - [Installation](#installation)
 - [CodeReviewer](#CodeReviewer)
+- [Author](#Author)
 
 ---
 
@@ -46,3 +47,8 @@ It is designed to run in **emu8086**.
 
 ## CodeReviewer 
 - Dr Sara El-Metwally
+
+---
+
+## Author
+- Hima
