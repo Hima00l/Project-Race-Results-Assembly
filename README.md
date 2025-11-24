@@ -41,7 +41,7 @@ It is designed to run in **emu8086**.
 1. Download and install [emu8086](https://emu8086-microprocessor-emulator.en.softonic.com/) on your computer.
 2. Clone this repository:
    ```bash
-   [git clone https://github.com/yourusername/your-repo.git](https://github.com/Hima00l/Project-Race-Results-Assembly.git)
+     git clone https://github.com/yourusername/your-repo.git
 
 ---
 
