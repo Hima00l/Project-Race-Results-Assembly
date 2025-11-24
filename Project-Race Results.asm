@@ -9,9 +9,11 @@ DATA SEGMENT
 	MSG1      DB 'Enter the numbers of players(MAXIMUM 30): ',0 
 	MSG2      DB 'Enter the ID of players: ',0 
 	MSG3      DB 0DH,0AH,'Enter the time of players: ',0 
-	MSG4      DB 0DH,0AH,'Times after sorting: ',0      
-	WINMSG    DB 0DH,0AH,'     WINNER ---> ',0 
-	TIMEMSG   DB 0DH,0AH,'     TIME TAKEN ---> ',0
+	MSG4      DB 0DH,0AH,'Times after sorting: ',0 
+	TOP_BORDER    DB '+-------------------------+',0     
+	WINMSG    DB 0DH,0AH,'|   WINNER ---> ',0 
+	TIMEMSG   DB 0DH,0AH,'|   TIME TAKEN ---> ',0 
+	BOTTOM_BORDER DB '+-------------------------+',0
 	ERRMSG    DB 0DH,0AH,'This number greater than 30',0 
 	ENDMSG    DB 0DH,0AH,'This End , See you again',0 
 	ENDMSG1   DB 0DH,0AH,'~-------------------------------------~',0
@@ -120,7 +122,11 @@ LOOP3:  	MOV AL,NUMBERS[SI]
         	
         	  
         	
-WINNER:  
+WINNER:     
+            LEA SI, TOP_BORDER
+            CALL PRINT_STRING
+            
+            
             LEA SI,WINMSG
             CALL PRINT_STRING
             
@@ -135,6 +141,11 @@ WINNER:
             
             PRINT 0AH      
         	PRINT 0DH
+        	
+        	LEA SI, BOTTOM_BORDER
+            CALL PRINT_STRING
+            PRINT 0AH
+            PRINT 0DH
             JMP END
 
 ERROR:       
