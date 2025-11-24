@@ -78,7 +78,7 @@ LOOP2:  	CALL SCAN_NUM
        
         
         
-	    	;SORTING
+	    	
 	    	DEC N            
 	    	MOV CX, N                
 OUTER:  	MOV SI, 0       
