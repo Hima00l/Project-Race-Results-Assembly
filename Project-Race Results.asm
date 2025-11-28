@@ -16,7 +16,8 @@ DATA SEGMENT
 	BOTTOM_BORDER DB '+-------------------------+',0
 	ERRMSG    DB 0DH,0AH,'This number greater than 30',0 
 	ENDMSG    DB 0DH,0AH,'This End , See you again',0 
-	ENDMSG1   DB 0DH,0AH,'~-------------------------------------~',0
+	ENDMSG1   DB 0DH,0AH,'~-------------------------------------~',0 
+	RMSG      DB 0DH,0AH,'Press any key to restart ',0
 	                               
 DATA ENDS  
 
@@ -30,6 +31,7 @@ START:	MOV AX, DATA
          	DEFINE_PRINT_STRING 
         	DEFINE_PRINT_NUM
         	DEFINE_PRINT_NUM_UNS
+
 
 
 	    	LEA SI,MSG1
@@ -168,10 +170,14 @@ END:
            PRINT 0AH      
            PRINT 0DH 
            
+           LEA SI,RMSG
+           CALL PRINT_STRING
+           
+           MOV AH,0
+           INT 16H
+           
            PRINT 0AH      
            PRINT 0DH
-           
-           MOV SI,0
            JMP START
             
        
