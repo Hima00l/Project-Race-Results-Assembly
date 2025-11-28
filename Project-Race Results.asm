@@ -178,6 +178,9 @@ END:
            
            PRINT 0AH      
            PRINT 0DH
+            
+           PRINT 0AH      
+           PRINT 0DH
            JMP START
             
        
